@@ -1,7 +1,7 @@
 # Lab 0: Environment Setup
 
 **Course:** Cloud Computing Security Essentials  
-**Lab:** 0 — Environment Setup  
+**Lab:** 0 Environment Setup  
 **Date:** 28 July 2026
 
 ## Objective
@@ -33,7 +33,8 @@ docker --version
 
 The command returned Docker version 29.6.2, confirming that the Docker command-line client is installed.
 
-![Docker version verification](./Screenshot%202026-07-28%20192156.png)
+<img width="189" height="24" alt="Screenshot 2026-07-28 192156" src="https://github.com/user-attachments/assets/19bd3594-7e72-4d24-b1bd-b4bda51cf837" />
+
 
 ### 2. AWS Command Line Interface
 
@@ -45,7 +46,7 @@ aws --version
 
 The output confirms AWS CLI version 2.36.9 running with Python 3.14.6 on Ubuntu Linux.
 
-![AWS CLI version verification](./Screenshot%202026-07-28%20192247.png)
+<img width="370" height="23" alt="Screenshot 2026-07-28 192247" src="https://github.com/user-attachments/assets/b414a4d0-632b-4b94-b807-fede8dcfe9b4" />
 
 ### 3. kind
 
@@ -57,7 +58,7 @@ kind --version
 
 The command returned kind v0.23.0.
 
-![kind version verification](./Screenshot%202026-07-28%20192307.png)
+<img width="179" height="24" alt="Screenshot 2026-07-28 192307" src="https://github.com/user-attachments/assets/a5da56a2-270b-4466-8f65-f4bc3f6f9d80" />
 
 ### 4. kubectl
 
@@ -69,7 +70,7 @@ kubectl version --client
 
 The installed client is v1.36.3 and includes Kustomize v5.8.1.
 
-![kubectl version verification](./Screenshot%202026-07-28%20192410.png)
+<img width="229" height="34" alt="Screenshot 2026-07-28 192410" src="https://github.com/user-attachments/assets/60d343b6-5410-497e-955d-d91948831902" />
 
 ### 5. Cryptographic and OTP utilities
 
@@ -82,20 +83,8 @@ oathtool --version
 
 The environment includes OpenSSL 3.0.13 and oathtool 2.6.11. These tools will support later exercises involving encryption, certificates, hashes, and time-based one-time passwords.
 
-![OpenSSL and oathtool version verification](./Screenshot%202026-07-28%20192503.png)
-
-## Docker Desktop Service Check
-
-An attempt was made to start Docker Desktop from the Linux user session:
-
-```bash
-systemctl --user start docker-desktop
-```
-
-The command returned `Unit docker-desktop.service not found.` This does not affect the confirmed presence of the Docker CLI, but it indicates that Docker Desktop is not registered as a user-level systemd service in this Ubuntu environment. If a later lab requires the Docker daemon, it should be started through the Docker Desktop application on Windows or by starting the appropriate Docker daemon/service for the installed setup.
-
-![Docker Desktop service check](./Screenshot%202026-07-28%20193718.png)
+<img width="395" height="112" alt="Screenshot 2026-07-28 192503" src="https://github.com/user-attachments/assets/99235849-b2cc-4e41-a569-f7da20171536" />
 
 ## Conclusion
 
-The required command-line tools for the lab environment are installed and their versions have been recorded. Docker, AWS CLI, kind, kubectl, OpenSSL, and oathtool are available for subsequent cloud-computing security labs. The Docker Desktop service command requires separate configuration or startup if daemon access is needed.
+The required command-line tools for the lab environment are installed and their versions have been recorded. Docker, AWS CLI, kind, kubectl, OpenSSL, and oathtool are available for subsequent cloud-computing security labs.

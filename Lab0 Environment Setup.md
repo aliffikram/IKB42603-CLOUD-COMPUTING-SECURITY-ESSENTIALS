@@ -27,10 +27,6 @@ The verification was performed from an Ubuntu terminal (WSL/Linux shell). The fo
 
 The Docker installation was checked with:
 
-```bash
-docker --version
-```
-
 The command returned Docker version 29.6.2, confirming that the Docker command-line client is installed.
 
 <img width="189" height="24" alt="Screenshot 2026-07-28 192156" src="https://github.com/user-attachments/assets/19bd3594-7e72-4d24-b1bd-b4bda51cf837" />
@@ -40,10 +36,6 @@ The command returned Docker version 29.6.2, confirming that the Docker command-l
 
 The AWS CLI installation was checked with:
 
-```bash
-aws --version
-```
-
 The output confirms AWS CLI version 2.36.9 running with Python 3.14.6 on Ubuntu Linux.
 
 <img width="370" height="23" alt="Screenshot 2026-07-28 192247" src="https://github.com/user-attachments/assets/b414a4d0-632b-4b94-b807-fede8dcfe9b4" />
@@ -51,10 +43,6 @@ The output confirms AWS CLI version 2.36.9 running with Python 3.14.6 on Ubuntu 
 ### 3. kind
 
 The Kubernetes-in-Docker utility was checked with:
-
-```bash
-kind --version
-```
 
 The command returned kind v0.23.0.
 
@@ -64,10 +52,6 @@ The command returned kind v0.23.0.
 
 The Kubernetes client was checked with:
 
-```bash
-kubectl version --client
-```
-
 The installed client is v1.36.3 and includes Kustomize v5.8.1.
 
 <img width="229" height="34" alt="Screenshot 2026-07-28 192410" src="https://github.com/user-attachments/assets/60d343b6-5410-497e-955d-d91948831902" />
@@ -75,11 +59,6 @@ The installed client is v1.36.3 and includes Kustomize v5.8.1.
 ### 5. Cryptographic and OTP utilities
 
 OpenSSL and oathtool were verified using:
-
-```bash
-openssl version
-oathtool --version
-```
 
 The environment includes OpenSSL 3.0.13 and oathtool 2.6.11. These tools will support later exercises involving encryption, certificates, hashes, and time-based one-time passwords.
 

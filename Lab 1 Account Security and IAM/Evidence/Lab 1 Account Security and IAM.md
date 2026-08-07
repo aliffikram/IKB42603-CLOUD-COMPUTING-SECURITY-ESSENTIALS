@@ -159,9 +159,10 @@ The following authorization checks are used to prove the role is enforced:
 
 SA=system:serviceaccount:dev:dev-user
 
-Should be NO — reading pods in dev is allowed
+Should be YES — reading pods in dev is allowed
 
-<img width="328" height="22" alt="24" src="https://github.com/user-attachments/assets/dab59579-780a-4363-966e-62825a4d2a8a" />
+<img width="329" height="24" alt="24  7 1 Should be YES — reading pods in dev is allowed" src="https://github.com/user-attachments/assets/d4ee7f8d-664b-414c-ad64-86a055dca42e" />
+
 
 Should be NO — deleting pods is not granted
 
@@ -172,7 +173,7 @@ Should be NO — the role does not extend to prod
 <img width="332" height="23" alt="26" src="https://github.com/user-attachments/assets/bbd96360-b595-4020-982e-d213eefbef23" />
 
 Expected results:
-- `NO` for listing pods in `dev`
+- `YES` for listing pods in `dev`
 - `NO` for deleting pods in `dev`
 - `NO` for listing pods in `prod`
 

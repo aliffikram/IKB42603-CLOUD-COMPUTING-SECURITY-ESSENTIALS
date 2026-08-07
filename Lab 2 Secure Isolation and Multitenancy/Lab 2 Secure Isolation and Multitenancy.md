@@ -2,7 +2,7 @@
 
 **Course:** Cloud Computing Security Essentials  
 **Lab:** 2 Secure Isolation and Multi-Tenancy  
-**Date:** 7 August 2026
+**Date:** 11 August 2026
 
 ## Objective
 
@@ -132,21 +132,11 @@ Data remanence is residual data that may remain recoverable after a file is dele
 
 The following commands verify the two main cluster controls:
 
-```powershell
-kubectl get networkpolicy -A
-kubectl describe resourcequota tenant-a-quota -n tenant-a
-```
-
 ![Verification command output](Evidence/7.1%20Verification%20Command.png)
 
 ## Cleanup and Teardown
 
 After capturing the evidence, the temporary Kubernetes cluster and Docker volume can be removed:
-
-```powershell
-kind delete cluster --name ccse-lab2
-docker volume rm ccse-vol
-```
 
 ![Cleanup and teardown](Evidence/8.1%20Cleanup%20%26%20Teardown.png)
 

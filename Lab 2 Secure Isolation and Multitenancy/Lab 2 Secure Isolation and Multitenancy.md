@@ -2,7 +2,7 @@
 
 **Course:** Cloud Computing Security Essentials  
 **Lab:** 2 Secure Isolation and Multi-Tenancy  
-**Date:** 11 August 2026
+**Date:** 8 August 2026
 
 ## Objective
 

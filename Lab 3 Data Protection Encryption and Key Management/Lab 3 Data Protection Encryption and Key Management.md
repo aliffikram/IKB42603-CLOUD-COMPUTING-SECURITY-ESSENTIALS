@@ -30,8 +30,8 @@ Create a sample sensitive record
 Encrypt the record with AES-256
 <img width="906" height="70" alt="1 1  Encrypt with AES-256" src="https://github.com/user-attachments/assets/38e9f1f7-dbd5-48c7-997c-25c265a0a798" />
 
-
 Encrypted ciphertext is unreadable
+
 <img width="539" height="48" alt="1 2  Prove it is unreadable" src="https://github.com/user-attachments/assets/0323b9bd-8c8e-4532-a25e-8f62863368c5" />
 
 Successful AES-256 decryption

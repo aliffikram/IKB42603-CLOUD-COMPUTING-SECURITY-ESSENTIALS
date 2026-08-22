@@ -118,6 +118,7 @@ Create a separate KMS key for tenant B
 <img width="759" height="377" alt="6  A separate key for tenant B" src="https://github.com/user-attachments/assets/3d1f326e-0d3d-4c43-bf58-7c83b5309e65" />
 
 Assign the KeyId to KEY_B
+
 <img width="636" height="21" alt="6 1  Copy the KeyId from the output into KEY_B below" src="https://github.com/user-attachments/assets/d7576443-ab61-454d-88f6-e0e815d50e73" />
 
 Schedule deletion and disable tenant A's key

@@ -45,6 +45,7 @@ AES provides fast confidentiality for stored data. However, the shared symmetric
 A 2048-bit RSA public/private key pair was generated. The public key encrypted the record, while the matching private key decrypted it. A SHA-256 signature was then created with the private key and successfully verified with the public key.
 
 Generate the RSA key pair
+
 <img width="575" height="67" alt="2  Generate a 2048-bit key pair" src="https://github.com/user-attachments/assets/3afd13df-2d05-4f84-b33a-742282cbf59c" />
 
 Encrypt with the public key and decrypt with the private key
@@ -85,6 +86,7 @@ Create tenant A's KMS key and capture its KeyId
 
 
 Assign the KeyId to KEY_A
+
 <img width="639" height="21" alt="4 2  Copy the KeyId from the output into KEY_A below" src="https://github.com/user-attachments/assets/16a84ac7-33c6-4139-afc0-bce1abcda2da" />
 
 Encrypt a small secret directly with KMS
@@ -115,13 +117,13 @@ A separate KMS key was created for tenant B and assigned to `KEY_B`, keeping it 
 Create a separate KMS key for tenant B
 <img width="759" height="377" alt="6  A separate key for tenant B" src="https://github.com/user-attachments/assets/3d1f326e-0d3d-4c43-bf58-7c83b5309e65" />
 
-![Assign the KeyId to KEY_B]
+Assign the KeyId to KEY_B
 <img width="636" height="21" alt="6 1  Copy the KeyId from the output into KEY_B below" src="https://github.com/user-attachments/assets/d7576443-ab61-454d-88f6-e0e815d50e73" />
 
 Schedule deletion and disable tenant A's key
 <img width="607" height="122" alt="6 2  Schedule deletion of tenant A&#39;s key (min window)   Disable it immediately to simulate erasure" src="https://github.com/user-attachments/assets/cba0423f-6022-4fd3-ab6d-d3bdc7564d61" />
 
-![Decrypt fails after tenant A's key is disabled]
+Decrypt fails after tenant A's key is disabled
 <img width="1205" height="88" alt="6 3  Attempt to unwrap tenant A&#39;s data key now — it should FAIL" src="https://github.com/user-attachments/assets/8836cc47-2489-4a86-87db-940f2631bbcc" />
 
 This proves cryptographic erasure: ciphertext and backups may remain, but without the KMS key they cannot be decrypted. Separate keys also reduce the impact of a key compromise to the affected tenant.

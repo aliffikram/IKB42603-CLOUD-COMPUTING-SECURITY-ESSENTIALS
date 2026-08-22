@@ -2,7 +2,7 @@
 
 **Course:** Cloud Computing Security Essentials  
 **Lab:** 3 Data Protection, Encryption and Key Management  
-**Date:** 22 August 2026
+**Date:** 20 August 2026
 
 ## Objective
 

@@ -1,12 +1,9 @@
 # Lab 4: Access Control and Network Security
 
-| Item | Details |
-|---|---|
-| Course | Cloud Computing Security Essentials |
-| Lab | Lab 4 — Access Control and Network Security |
-| Student | ______________________________ |
-| Student ID | ______________________________ |
-| Date performed | 24 August 2026 |
+**Course:** Cloud Computing Security Essentials  
+**Lab:** 4 Access Control and Network Security  
+**Date:** 27 August 2026
+
 
 ## Objective
 

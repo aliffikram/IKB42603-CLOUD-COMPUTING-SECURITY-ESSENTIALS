@@ -53,11 +53,13 @@ The supplied test output shows a `200` response for the unauthenticated request 
 
 A Base32 shared secret was used to generate a current six-digit TOTP value. The entered code was compared against the expected value, and the captured validation returned `MFA OK`.
 
-![Evidence 2 — Generate TOTP](<Evidence/2. Create a shared secret (base32) and generate the current 6-digit code.png>)
+<img width="380" height="56" alt="2  Create a shared secret (base32) and generate the current 6-digit code" src="https://github.com/user-attachments/assets/1cfa55e2-0ef8-4f0a-9413-35312041e349" />
+
 
 *Figure 2. TOTP shared secret and current-code generation.*
 
-![Evidence 2.1 — Validate TOTP](<Evidence/2.1. Validate a code the user types (compare to the expected value).png>)
+<img width="425" height="44" alt="2 1  Validate a code the user types (compare to the expected value)" src="https://github.com/user-attachments/assets/dadcd4b7-2651-4abf-a709-30276c77e111" />
+
 
 *Figure 2.1. Successful TOTP validation (`MFA OK`).*
 

@@ -1,13 +1,8 @@
 # IKB42603 Lab 5 Report — Monitoring, Logging and Incident Detection
 
-| Item | Details |
-| --- | --- |
-| Course | IKB42603 Cloud Computing Security Essentials |
-| Lab | Lab 5 — Monitoring, Logging & Incident Detection |
-| Student | *[Enter name]* |
-| Student ID | *[Enter ID]* |
-| Date performed | 28 August 2026 |
-| Environment | Ubuntu shell, Docker, LocalStack, AWS CLI v2 |
+**Course:** Cloud Computing Security Essentials  
+**Lab:** 5 Monitoring, Logging and Incident Detection  
+**Date:** 3 September 2026
 
 ## 1. Introduction and objectives
 

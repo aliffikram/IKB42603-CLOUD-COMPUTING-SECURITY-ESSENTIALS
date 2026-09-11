@@ -1,15 +1,8 @@
-# IKB42603 Lab 6 Report — Object Storage Security and the Data Security Lifecycle
+# Lab 5:Monitoring, Logging and Incident Detection
 
-| Item | Details |
-| --- | --- |
-| Course | IKB42603 Cloud Computing Security Essentials |
-| Lab | Lab 6 — Object Storage Security & Data Lifecycle |
-| Student | *[Enter name]* |
-| Student ID | *[Enter ID]* |
-| Date performed | *[Enter date]* |
-| Environment | Docker, LocalStack Pro, AWS CLI v2, curl |
-| Bucket | `[Enter bucket name]` |
-| KMS key ID | `[Enter KMS key ID]` |
+**Course:** Cloud Computing Security Essentials  
+**Lab:** 5 Monitoring, Logging and Incident Detection  
+**Date:** 3 September 2026
 
 ## 1. Introduction and objectives
 

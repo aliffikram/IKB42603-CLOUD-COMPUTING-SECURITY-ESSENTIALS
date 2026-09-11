@@ -2,7 +2,7 @@
 
 **Course:** Cloud Computing Security Essentials  
 **Lab:** 5 Monitoring, Logging and Incident Detection  
-**Date:** 3 September 2026
+**Date:** 11 September 2026
 
 ## 1. Introduction and objectives
 

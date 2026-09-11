@@ -1,7 +1,7 @@
 # Lab 6: Object Storage and Data Lifecycle
 
 **Course:** Cloud Computing Security Essentials  
-**Lab:** 6 Object Storage and Data Lifecycle 
+**Lab:** 6 Object Storage and Data Lifecycle  
 **Date:** 11 September 2026
 
 ## 1. Introduction and objectives
@@ -14,13 +14,13 @@ The second session addressed data state and disposal. It demonstrated versioning
 
 LocalStack was started with IAM enforcement enabled. The AWS CLI was configured to use the local endpoint and the LocalStack account ID `000000000000` was used in the bucket-policy ARNs.
 
-<img width="283" height="22" alt="0  Start clean" src="https://github.com/user-attachments/assets/0bea1eb7-ac48-4b10-84f0-61b5bef85182" />
+<img width="283" height="22" alt="0  Start clean" src="https://github.com/user-attachments/assets/0bea1eb7-ac48-4b10-84f0-61b5bef85182" />  
 
-<img width="354" height="69" alt="0 1  Start LocalStack Pro with IAM enforcement enabled" src="https://github.com/user-attachments/assets/f1c60742-1939-4c47-b7ab-be330b5d2768" />
+<img width="354" height="69" alt="0 1  Start LocalStack Pro with IAM enforcement enabled" src="https://github.com/user-attachments/assets/f1c60742-1939-4c47-b7ab-be330b5d2768" />  
 
-<img width="347" height="45" alt="0 2  Point the CLI at LocalStack" src="https://github.com/user-attachments/assets/f409f6f3-3793-4c62-aac1-21ada3b594d6" />
+<img width="347" height="45" alt="0 2  Point the CLI at LocalStack" src="https://github.com/user-attachments/assets/f409f6f3-3793-4c62-aac1-21ada3b594d6" />  
 
-<img width="345" height="77" alt="0 3  Verify LocalStack identity" src="https://github.com/user-attachments/assets/d9da693b-768b-46ca-84fe-7d8a72559df7" />
+<img width="345" height="77" alt="0 3  Verify LocalStack identity" src="https://github.com/user-attachments/assets/d9da693b-768b-46ca-84fe-7d8a72559df7" />  
 
 
 ## 3. Session A — Object storage and exposure control
@@ -37,24 +37,24 @@ The patient-records bucket contained three objects. Object keys use a flat names
 
 The following commands created and checked the objects and the confidential-data tag:
 
-<img width="333" height="89" alt="1  Define bucket name and initialize" src="https://github.com/user-attachments/assets/3c77a5aa-d998-4204-bd7a-f1d40ca4c47f" />
+<img width="333" height="89" alt="1  Define bucket name and initialize" src="https://github.com/user-attachments/assets/3c77a5aa-d998-4204-bd7a-f1d40ca4c47f" />  
 
-<img width="409" height="34" alt="1 1  Create local data files" src="https://github.com/user-attachments/assets/7b548b0f-2273-4743-aed7-c43a04938e1a" />
+<img width="409" height="34" alt="1 1  Create local data files" src="https://github.com/user-attachments/assets/7b548b0f-2273-4743-aed7-c43a04938e1a" />  
 
-<img width="472" height="265" alt="1 2  Upload objects with explicit classification tags" src="https://github.com/user-attachments/assets/70d6cf99-587a-40d2-955c-fbaf692a64ff" />
+<img width="472" height="265" alt="1 2  Upload objects with explicit classification tags" src="https://github.com/user-attachments/assets/70d6cf99-587a-40d2-955c-fbaf692a64ff" />  
 
-<img width="399" height="197" alt="1 3  Verification commands" src="https://github.com/user-attachments/assets/fc6d037b-7d20-4f10-a503-57b18ba5b7f8" />
+<img width="399" height="197" alt="1 3  Verification commands" src="https://github.com/user-attachments/assets/fc6d037b-7d20-4f10-a503-57b18ba5b7f8" />  
 
 
 ### Task 2: Public-bucket breach
 
 A deliberately unsafe bucket policy allowed `s3:GetObject` to `"Principal": "*"` on `arn:aws:s3:::$BUCKET/*`. An unauthenticated `curl` request to `confidential/record.txt` returned HTTP 200 and the patient record. This reproduced a cloud-data exposure caused by authorisation configuration alone; no exploit was required.
 
-<img width="265" height="132" alt="2  Create public read policy" src="https://github.com/user-attachments/assets/47f43741-7bb2-4b6c-939b-c4c9b66e9020" />
+<img width="265" height="132" alt="2  Create public read policy" src="https://github.com/user-attachments/assets/47f43741-7bb2-4b6c-939b-c4c9b66e9020" />  
 
-<img width="524" height="135" alt="2 1  Apply public policy" src="https://github.com/user-attachments/assets/a6a486b8-e4a9-4035-ac60-e600ec2b8733" />
+<img width="524" height="135" alt="2 1  Apply public policy" src="https://github.com/user-attachments/assets/a6a486b8-e4a9-4035-ac60-e600ec2b8733" />  
 
-<img width="600" height="56" alt="2 2  Unauthenticated access attempt using curl" src="https://github.com/user-attachments/assets/336cf372-a3e8-4120-b524-195532e20ec9" />
+<img width="600" height="56" alt="2 2  Unauthenticated access attempt using curl" src="https://github.com/user-attachments/assets/336cf372-a3e8-4120-b524-195532e20ec9" />  
 
 
 
@@ -62,13 +62,13 @@ A deliberately unsafe bucket policy allowed `s3:GetObject` to `"Principal": "*"`
 
 The unsafe policy was removed and all four Block Public Access settings were enabled: `BlockPublicAcls`, `IgnorePublicAcls`, `BlockPublicPolicy`, and `RestrictPublicBuckets`. On AWS, `BlockPublicPolicy=true` rejects a bucket policy that would make the bucket public; `RestrictPublicBuckets=true` also prevents public/cross-account access granted by a public policy. The ACL flags provide parallel protection against public ACLs.
 
-<img width="361" height="12" alt="3  Remove the offending policy" src="https://github.com/user-attachments/assets/85a41e16-4558-4f79-a4f5-90ca5cdfe791" />
+<img width="361" height="12" alt="3  Remove the offending policy" src="https://github.com/user-attachments/assets/85a41e16-4558-4f79-a4f5-90ca5cdfe791" />  
 
-<img width="482" height="145" alt="3 1  Apply the account-level guardrail to the bucket" src="https://github.com/user-attachments/assets/7b9ea877-d7e2-4c9c-bc8d-d6b895447506" />
+<img width="482" height="145" alt="3 1  Apply the account-level guardrail to the bucket" src="https://github.com/user-attachments/assets/7b9ea877-d7e2-4c9c-bc8d-d6b895447506" />  
 
-<img width="527" height="11" alt="3 2  Try to re-introduce the public policy - the guardrail should refuse it" src="https://github.com/user-attachments/assets/bff8a8cf-3cc4-41e8-a71b-efe4cc318362" />
+<img width="527" height="11" alt="3 2  Try to re-introduce the public policy - the guardrail should refuse it" src="https://github.com/user-attachments/assets/bff8a8cf-3cc4-41e8-a71b-efe4cc318362" />  
 
-<img width="448" height="32" alt="3 3  Re-test the anonymous read" src="https://github.com/user-attachments/assets/6422de93-1e06-458e-a083-3a8ee859c4d1" />
+<img width="448" height="32" alt="3 3  Re-test the anonymous read" src="https://github.com/user-attachments/assets/6422de93-1e06-458e-a083-3a8ee859c4d1" />  
 
 
 
@@ -76,7 +76,7 @@ LocalStack may store this configuration without fully enforcing it. If the attem
 
 The replacement policy granted only the LocalStack account root principal access to `internal/*`, not the entire bucket:
 
-<img width="569" height="268" alt="3 4  Create least-privilege bucket policy" src="https://github.com/user-attachments/assets/0e829aa6-f8c7-4fe2-82f9-15894521cacf" />
+<img width="569" height="268" alt="3 4  Create least-privilege bucket policy" src="https://github.com/user-attachments/assets/0e829aa6-f8c7-4fe2-82f9-15894521cacf" />  
 
 
 ### Task 4: Identity policy versus resource policy
@@ -90,15 +90,15 @@ The replacement policy granted only the LocalStack account root principal access
 
 The evaluation order is default deny, then any matching explicit deny, then matching allow. If LocalStack did not enforce the denial even with `ENFORCE_IAM=1`, the two policy documents and this evaluation record demonstrate the intended AWS decision.
 
-<img width="349" height="268" alt="4  Create DataAnalyst IAM user" src="https://github.com/user-attachments/assets/7dc1d76b-e323-4874-a966-8b03a60319d6" />
+<img width="349" height="268" alt="4  Create DataAnalyst IAM user" src="https://github.com/user-attachments/assets/7dc1d76b-e323-4874-a966-8b03a60319d6" />  
 
-<img width="419" height="23" alt="4 1  Generate and configure analyst credentials" src="https://github.com/user-attachments/assets/a4bef189-a087-446b-8e02-4c03497bcd90" />
+<img width="419" height="23" alt="4 1  Generate and configure analyst credentials" src="https://github.com/user-attachments/assets/a4bef189-a087-446b-8e02-4c03497bcd90" />  
 
-<img width="382" height="66" alt="4 2  Copy the two values into these variables" src="https://github.com/user-attachments/assets/3ed76426-a33a-47fa-9426-28b259d8e538" />
+<img width="382" height="66" alt="4 2  Copy the two values into these variables" src="https://github.com/user-attachments/assets/3ed76426-a33a-47fa-9426-28b259d8e538" />  
 
-<img width="440" height="262" alt="4 3  Apply conflicting bucket policy" src="https://github.com/user-attachments/assets/fba6b32a-a4c3-4532-8e46-f40750384fad" />
+<img width="440" height="262" alt="4 3  Apply conflicting bucket policy" src="https://github.com/user-attachments/assets/fba6b32a-a4c3-4532-8e46-f40750384fad" />  
 
-<img width="487" height="329" alt="4 4  Test conflicting permissions" src="https://github.com/user-attachments/assets/c83f8d3d-0f0b-4f2c-a9d4-85d93524d67f" />
+<img width="487" height="329" alt="4 4  Test conflicting permissions" src="https://github.com/user-attachments/assets/c83f8d3d-0f0b-4f2c-a9d4-85d93524d67f" />  
 
 
 
@@ -108,13 +108,13 @@ The evaluation order is default deny, then any matching explicit deny, then matc
 
 A customer-managed KMS key was configured as the bucket's default encryption key with `BucketKeyEnabled=true`. The confidential version-2 object was uploaded without encryption options; `head-object` should show `aws:kms`, the configured key ID, and the bucket-key setting. This proves the bucket, rather than the uploader, enforced encryption at rest.
 
-<img width="312" height="36" alt="5  Create dedicated KMS key" src="https://github.com/user-attachments/assets/cfd7d3f5-16c0-4aa9-8039-18e323d02360" />
+<img width="312" height="36" alt="5  Create dedicated KMS key" src="https://github.com/user-attachments/assets/cfd7d3f5-16c0-4aa9-8039-18e323d02360" />  
 
-<img width="317" height="154" alt="5 1  Configure bucket-default KMS encryption" src="https://github.com/user-attachments/assets/85277b62-806f-4b63-8412-0f47a150a18c" />
+<img width="317" height="154" alt="5 1  Configure bucket-default KMS encryption" src="https://github.com/user-attachments/assets/85277b62-806f-4b63-8412-0f47a150a18c" />  
 
-<img width="487" height="110" alt="5 2  Test unencrypted upload" src="https://github.com/user-attachments/assets/3e0866b4-e8b4-4514-a9be-4ac8b0e808e7" />
+<img width="487" height="110" alt="5 2  Test unencrypted upload" src="https://github.com/user-attachments/assets/3e0866b4-e8b4-4514-a9be-4ac8b0e808e7" />  
 
-<img width="494" height="33" alt="5 3  Inspect object metadata" src="https://github.com/user-attachments/assets/5b00ab02-6a70-4705-992a-ac16d6f20b41" />
+<img width="494" height="33" alt="5 3  Inspect object metadata" src="https://github.com/user-attachments/assets/5b00ab02-6a70-4705-992a-ac16d6f20b41" />  
 
 
 ### Task 6: Presigned access and the SecureTransport condition
@@ -123,33 +123,33 @@ A presigned URL delegated read access to one object for 60 seconds. Its signatur
 
 The `aws:SecureTransport=false` deny policy was then applied. Since the LocalStack endpoint uses plain HTTP, the condition matched every local request and the bucket became inaccessible until the policy was deleted. On real AWS S3 HTTPS endpoints, legitimate HTTPS requests set this condition to true and are not denied. This demonstrates that a condition key must be validated in the environment where the policy runs.
 
-<img width="476" height="11" alt="6  Generate 60-second presigned URL" src="https://github.com/user-attachments/assets/e195e404-5725-4f22-b0ec-fec8dab60a31" />
+<img width="476" height="11" alt="6  Generate 60-second presigned URL" src="https://github.com/user-attachments/assets/e195e404-5725-4f22-b0ec-fec8dab60a31" />  
 
-<img width="332" height="33" alt="6 1  Test valid access" src="https://github.com/user-attachments/assets/9526ecf3-6d49-48de-820b-de624894977b" />
+<img width="332" height="33" alt="6 1  Test valid access" src="https://github.com/user-attachments/assets/9526ecf3-6d49-48de-820b-de624894977b" />  
 
-<img width="434" height="164" alt="6 2  Apply transport enforcement policy trap" src="https://github.com/user-attachments/assets/01d15c07-081f-490f-9495-28f42c97529d" />
+<img width="434" height="164" alt="6 2  Apply transport enforcement policy trap" src="https://github.com/user-attachments/assets/01d15c07-081f-490f-9495-28f42c97529d" />  
 
-<img width="340" height="359" alt="6 3  Verify HTTP request lockout on LocalStack endpoint" src="https://github.com/user-attachments/assets/43751b2e-f548-407b-a11a-6aa48bdfff7d" />
+<img width="340" height="359" alt="6 3  Verify HTTP request lockout on LocalStack endpoint" src="https://github.com/user-attachments/assets/43751b2e-f548-407b-a11a-6aa48bdfff7d" />  
 
-<img width="364" height="12" alt="6 4  Recover before continuing" src="https://github.com/user-attachments/assets/de371383-7af5-4de9-96c1-4660a11e78be" />
+<img width="364" height="12" alt="6 4  Recover before continuing" src="https://github.com/user-attachments/assets/de371383-7af5-4de9-96c1-4660a11e78be" />  
 
 
 ### Task 7: Versioning, delete markers, and remanence
 
 Versioning was enabled and two revisions of `confidential/record.txt` were uploaded. A normal `delete-object` operation then placed a delete marker as the latest version. The ordinary object read failed, but the original version with ID `null` could still be retrieved and contained the original diagnosis. This is object-level data remanence.
 
-<img width="380" height="23" alt="7  Enable object versioning" src="https://github.com/user-attachments/assets/20fc13de-d335-4219-90f3-dc8aea2c249e" />
+<img width="380" height="23" alt="7  Enable object versioning" src="https://github.com/user-attachments/assets/20fc13de-d335-4219-90f3-dc8aea2c249e" />  
 
 
 Deleting the `null` version permanently removes that particular old object version, but every other version and delete marker must also be enumerated and deleted before the record is genuinely removed.
 
-<img width="489" height="255" alt="7 1  Create version history" src="https://github.com/user-attachments/assets/3ba9a2d0-6d44-4136-83ef-efb47282611a" />
+<img width="489" height="255" alt="7 1  Create version history" src="https://github.com/user-attachments/assets/3ba9a2d0-6d44-4136-83ef-efb47282611a" />  
 
-<img width="475" height="56" alt="7 2  Perform standard delete operation" src="https://github.com/user-attachments/assets/97f5c5a9-dc56-4c9b-b844-5cbadeb34bb5" />
+<img width="475" height="56" alt="7 2  Perform standard delete operation" src="https://github.com/user-attachments/assets/97f5c5a9-dc56-4c9b-b844-5cbadeb34bb5" />  
 
-<img width="527" height="362" alt="7 3  List remaining versions" src="https://github.com/user-attachments/assets/bb2c6140-b2aa-4863-81a6-6830dcea7b3b" />
+<img width="527" height="362" alt="7 3  List remaining versions" src="https://github.com/user-attachments/assets/bb2c6140-b2aa-4863-81a6-6830dcea7b3b" />  
 
-<img width="476" height="200" alt="7 4  Recover original data from version null" src="https://github.com/user-attachments/assets/28d3b384-312b-4e81-b99d-1af1d1ab26de" />
+<img width="476" height="200" alt="7 4  Recover original data from version null" src="https://github.com/user-attachments/assets/28d3b384-312b-4e81-b99d-1af1d1ab26de" />  
 
 
 
@@ -164,11 +164,11 @@ An auditable lifecycle policy was applied. It expires current confidential objec
 
 Finally, the bucket KMS key was disabled and scheduled for deletion after seven days. Because encrypted objects depend on that key to decrypt their data keys, destroying the key makes all ciphertext encrypted under it unrecoverable. This is cryptographic erasure. LocalStack may not re-check a disabled KMS key when S3 reads an object; where that occurred, the KMS encrypt → disable-key → decrypt sequence should instead be recorded as the evidence of failed decryption.
 
-<img width="341" height="212" alt="8  Apply lifecycle rule configuration" src="https://github.com/user-attachments/assets/5e0d9bb0-3dcb-47a1-b15f-51de1d68fe61" />
+<img width="341" height="212" alt="8  Apply lifecycle rule configuration" src="https://github.com/user-attachments/assets/5e0d9bb0-3dcb-47a1-b15f-51de1d68fe61" />  
 
-<img width="347" height="157" alt="8 1  Apply lifecycle rule configuration" src="https://github.com/user-attachments/assets/70ca897b-075d-404a-9421-d42ed6504b35" />
+<img width="347" height="157" alt="8 1  Apply lifecycle rule configuration" src="https://github.com/user-attachments/assets/70ca897b-075d-404a-9421-d42ed6504b35" />  
 
-<img width="389" height="200" alt="8 2  Execute Cryptographic Erasure" src="https://github.com/user-attachments/assets/e3ae77c7-89f8-46e9-8dae-5c4468e6517d" />
+<img width="389" height="200" alt="8 2  Execute Cryptographic Erasure" src="https://github.com/user-attachments/assets/e3ae77c7-89f8-46e9-8dae-5c4468e6517d" />  
 
 
 
@@ -208,7 +208,7 @@ With versioning enabled, `delete-object` creates a delete marker rather than era
 
 Run the following after completing the tasks, then paste the actual output below it. This is the final evidence of the bucket's security posture.
 
-<img width="596" height="209" alt="9  Verification Command" src="https://github.com/user-attachments/assets/7b27617e-8f7e-4a59-a8f5-c2736e1659dd" />
+<img width="596" height="209" alt="9  Verification Command" src="https://github.com/user-attachments/assets/7b27617e-8f7e-4a59-a8f5-c2736e1659dd" />  
 
 
 ## 7. Best-practices checklist
@@ -226,9 +226,9 @@ Run the following after completing the tasks, then paste the actual output below
 
 A versioned bucket cannot be emptied with s3 rb --force — that command ignores non-current versions and delete markers, and the bucket deletion fails with BucketNotEmpty. This is the same lesson as Task 7, one last time: you must remove every version explicitly.
 
-<img width="424" height="354" alt="10  Cleanup   Teardown" src="https://github.com/user-attachments/assets/41d4b11e-1df8-4bc6-b319-f578986657e7" />
+<img width="424" height="354" alt="10  Cleanup   Teardown" src="https://github.com/user-attachments/assets/41d4b11e-1df8-4bc6-b319-f578986657e7" />  
 
-<img width="303" height="230" alt="10 1  Cleanup   Teardown" src="https://github.com/user-attachments/assets/585f86e5-d24c-4795-a4a5-0a94451a19a3" />
+<img width="303" height="230" alt="10 1  Cleanup   Teardown" src="https://github.com/user-attachments/assets/585f86e5-d24c-4795-a4a5-0a94451a19a3" />  
 
 
 ## 9. Conclusion

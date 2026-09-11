@@ -1,4 +1,4 @@
-# Lab 5:Monitoring, Logging and Incident Detection
+# Lab 6: Object Storage and Data Lifecycle
 
 **Course:** Cloud Computing Security Essentials  
 **Lab:** 5 Monitoring, Logging and Incident Detection  
